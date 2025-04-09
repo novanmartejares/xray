@@ -108,8 +108,8 @@ const ExcelDataViewer = () => {
           <p><strong>Patient:</strong> ${row["Patient"]}</p>
           <p><strong>Age:</strong> ${row["Age"]}</p>
           <p><strong>Gender:</strong> ${row["Gender"]}</p>
-          <p><strong>DATE:</strong> ${row["D7 Data"]}</p>
-          <p><strong>COMPANY:</strong> ${row["D9 Data"]}</p>
+          <p><strong>DATE:</strong> ${row["DATE"]}</p>
+          <p><strong>COMPANY:</strong> ${row["COMPANY"]}</p>
         </div>
       `);
     });
@@ -139,7 +139,7 @@ const ExcelDataViewer = () => {
       const term = searchTerm.toLowerCase();
       return (
         row["Patient"]?.toLowerCase().includes(term) ||
-        row["D9 Data"]?.toLowerCase().includes(term)
+        row["COMPANY"]?.toLowerCase().includes(term)
       );
     })
     .sort((a, b) => {
