@@ -58,8 +58,8 @@ const ExcelDataViewer = () => {
 
       const finalData = structuredData.map((item) => ({
         ...item,
-        "D7 Data": d7Value,
-        "D9 Data": d9Value,
+        "DATE": d7Value,
+        "COMPANY": d9Value,
       }));
 
       setData(finalData);
