@@ -58,8 +58,8 @@ const ExcelDataViewer = () => {
 
       const finalData = structuredData.map((item) => ({
         ...item,
-        "DATE": d7Value,
-        "COMPANY": d9Value,
+        "D7 Data": d7Value,
+        "D9 Data": d9Value,
       }));
 
       setData(finalData);
@@ -108,8 +108,8 @@ const ExcelDataViewer = () => {
           <p><strong>Patient:</strong> ${row["Patient"]}</p>
           <p><strong>Age:</strong> ${row["Age"]}</p>
           <p><strong>Gender:</strong> ${row["Gender"]}</p>
-          <p><strong>DATE:</strong> ${row["DATE"]}</p>
-          <p><strong>COMPANY:</strong> ${row["COMPANY"]}</p>
+          <p><strong>DATE:</strong> ${row["D7 Data"]}</p>
+          <p><strong>COMPANY:</strong> ${row["D9 Data"]}</p>
         </div>
       `);
     });
@@ -139,7 +139,7 @@ const ExcelDataViewer = () => {
       const term = searchTerm.toLowerCase();
       return (
         row["Patient"]?.toLowerCase().includes(term) ||
-        row["COMPANY"]?.toLowerCase().includes(term)
+        row["D9 Data"]?.toLowerCase().includes(term)
       );
     })
     .sort((a, b) => {
